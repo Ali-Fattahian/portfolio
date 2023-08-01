@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from .models import Message
 from threading import Thread
 
@@ -8,6 +9,7 @@ def new_message(author, email, subject, content):
                            subject=subject, content=content)
 
 
+@csrf_exempt
 def create_message(request):
     if request.method == 'POST':
         author = request.POST.get('author')
