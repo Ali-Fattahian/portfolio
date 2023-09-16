@@ -1,0 +1,167 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/bc2a3a5e96.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"> -->
+    <title>Portfolio - Ali Fattahian</title>
+    <link rel="stylesheet" href={% static 'core/css/style.css' %} />
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="images">
+        <img src="images/background-upper.JPG" alt="sky">
+        <img src="images/background-lower.JPG" alt="mountains">
+      </div> -->
+      <section class="section" id="section--1">
+        <!-- <img src="images/background-lower.JPG" alt="mountains" class="foreground">
+        <img src="images/background-upper.JPG" alt="sky" class="background"> -->
+        <div class="nav-container">
+          <nav id="nav">
+            <a
+              href="#section--2"
+              class="nav__item"
+              title="Let's look at my projects"
+              >PROJECTS</a
+            ><a href="#section--3" class="nav__item" title="Know more about me"
+              >ABOUT</a
+            ><a href="#section--4" class="nav__item" title="Contact me!"
+              >CONTACT</a
+            >
+            <a
+              href="#"
+              class="nav__item nav__download"
+              download="ali-fattahian-resume"
+              title="Download my resume"
+              >RESUME</a
+            >
+          </nav>
+          <!-- <audio id="song">
+              <source src="" type="audio/mp3"> #Copyright issues
+          </audio> -->
+        </div>
+        <div class="intro-text"></div>
+      </section>
+      <section class="section section--hidden" id="section--2">
+        <h2 class="l-heading">PROJECTS</h2>
+        <div class="projects">
+          <a href="#" class="project">
+            <img class="project-image" src={% static 'core/images/1.JPG' %} alt="image" />
+            <div class="overlay">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+                sint natus, non impedit ex ea nihil sapiente voluptatem commodi
+                eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Veritatis eveniet blanditiis officiis nam vero dignissimos optio
+                voluptate, tempora quasi doloribus.
+              </p>
+            </div>
+          </a>
+          <a href="#" class="project">
+            <img class="project-image" src={% static 'core/images/2.JPG' %} alt="image" />
+            <div class="overlay">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+                sint natus, non impedit ex ea nihil sapiente voluptatem commodi
+                eligendi! Lorem ipsum dolor sit, amet consectetur adipisicing
+                elit. Velit, libero sed. Velit nesciunt tenetur eius architecto
+                officia voluptas laboriosam voluptate!
+              </p>
+            </div>
+          </a>
+          <a href="#" class="project">
+            <img class="project-image" src={% static 'core/images/3.JPG' %} alt="image" />
+            <div class="overlay">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+                sint natus, non impedit ex ea nihil sapiente voluptatem commodi
+                eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Magni temporibus ad quae voluptate inventore et quam, veritatis
+                delectus itaque repudiandae!
+              </p>
+            </div>
+          </a>
+          <a href="#" class="project">
+            <img class="project-image" src={% static 'core/images/4.JPG' %} alt="image" />
+            <div class="overlay">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+                sint natus, non impedit ex ea nihil sapiente voluptatem commodi
+                eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consectetur a fugiat distinctio laboriosam provident nulla maxime
+                porro quod delectus eligendi!
+              </p>
+            </div>
+          </a>
+        </div>
+      </section>
+      <section class="section section--hidden" id="section--3">
+        <div class="about-me">
+          <div class="about-me__content">
+            <h2 class="l-heading">ABOUT ME</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+              omnis minus odio minima sequi provident, fugit deleniti voluptate,
+              perspiciatis totam distinctio impedit at tenetur tempore
+              perferendis illum hic vel laudantium odit quam pariatur! Libero
+              alias quia.
+            </p>
+          </div>
+          <img
+            src={% static 'core/images/2.JPG' %}
+            alt="Ali Fattahian's picture"
+            class="about-me__image"
+          />
+        </div>
+      </section>
+      <section class="section section--hidden" id="section--4">
+        <div class="contact-me">
+          <h2>CONTACT ME</h2>
+          <form method="post" class="contact-me__form">
+            <input type='hidden' id='token' value='{{ csrf_token }}' />
+            <input type="text" name="name" id="name" placeholder="Name" />
+            <input type="email" name="email" id="email" placeholder="Email" />
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              placeholder="Subject"
+            />
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Message"
+            ></textarea>
+            <div class="send-div">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+          <div class="contact-me__socials">
+            <div class="socials">
+              <a href="www.linkedin.com/in/ali-fattahian" target="_blank" class="social-icon" id="linkedin"
+                ><li class="fa fa-linkedin-square"></li></a
+              ><a href="https://github.com/ali-fattahian" target="_blank" class="social-icon" id="github"
+                ><li class="fa fa-github-square"></li></a
+              ><a href="https://wa.me/+989134822507" target="_blank" class="social-icon" id="whatsapp"><li class="fa fa-whatsapp"></li></a
+              ><a href="https://t.me/AliFattahian" target="_blank" class="social-icon" id="telegram"
+                ><li class="fa fa-telegram"></li
+              ></a><a href="mailto:ali.fattahian1378@gmail.com" target="_blank" class="social-icon" id="mail"><li class="fa fa-envelope"></li></a>
+          </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src={% static 'core/js/script.js' %}></script>
+  </body>
+</html>
