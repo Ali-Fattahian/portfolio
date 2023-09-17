@@ -370,6 +370,32 @@ img {
   align-self: flex-start;
 }
 
+.message {
+  margin-bottom: 2rem;
+  color: #29BF12;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.message-close {
+  margin-left: .5rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: all ease-in 400ms;
+}
+
+.message-close:hover {
+  font-weight: bold;
+}
+
+.message-close-bracket {
+  transition: all;
+}
+
+.message-close:hover .message-close-bracket {
+  color: #d62323;
+}
+
 .contact-me__form {
   display: grid;
   grid-template-columns: 1fr;

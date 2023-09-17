@@ -96,6 +96,8 @@ allSectionsExceptNavSec.forEach(function (section) {
 });
 
 const form = document.querySelector('.contact-me__form')
+const messageEl = document.querySelector('.message')
+
 const formSubmitHandler = (e) => {
   e.preventDefault()
 
@@ -106,24 +108,45 @@ const formSubmitHandler = (e) => {
 
   if (name.value.length > 0 && email.value.length > 0 && subject.value.length > 0 && message.value.length > 0) {
     sendData(name.value.trim(), email.value.trim(), subject.value.trim(), message.value.trim())
+  } else {
+    messageEl.firstChild.textContent = "Please fill out all the fields."
+    messageEl.style.color = '#d62323'
+    messageEl.classList.remove('hidden')
+  }
+}
+
+
+async function sendData(name, email, subject, message) {
+  try{
+    const respone = await fetch('http://localhost:8000/create-message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        author: name,
+        email,
+        subject,
+        content: message
+      })
+    })
+    const res = await respone.json()
+    if (res) {
+      messageEl.firstChild.textContent = 'Thanks for sending the message, i will try to send you a reponse email as soon as i can.'
+      messageEl.style.color = '#29BF12'
+      messageEl.classList.remove('hidden')
+      form.reset()
+    }
+  } catch(err) {
+    messageEl.firstChild.textContent = err.message
+    messageEl.style.color = '#d62323'
+    messageEl.classList.remove('hidden')
   }
 
 }
 
-async function sendData(name, email, subject, message) {
-  const respone = await fetch('http://localhost:8000/create-message', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      author: name,
-      email,
-      subject,
-      content: message
-    })
-  })
-  console.log(respone.json())
-}
-
+const closeMessage = document.querySelector('.message-close')
+closeMessage.addEventListener('click', () => {
+  messageEl.classList.add('hidden')
+})
 form.addEventListener('submit', formSubmitHandler)

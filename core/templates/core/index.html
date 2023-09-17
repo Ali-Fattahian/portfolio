@@ -128,20 +128,25 @@
       <section class="section section--hidden" id="section--4">
         <div class="contact-me">
           <h2>CONTACT ME</h2>
+          <div class="message hidden">
+            <span></span><span class="message-close"><span><span class="message-close-bracket">[</span> CLOSE<span class="message-close"><span><span class="message-close-bracket">]</span></span>
+          </div>
           <form method="post" class="contact-me__form">
             <input type='hidden' id='token' value='{{ csrf_token }}' />
-            <input type="text" name="name" id="name" placeholder="Name" />
-            <input type="email" name="email" id="email" placeholder="Email" />
+            <input type="text" name="name" id="name" placeholder="Name" required />
+            <input type="email" name="email" id="email" placeholder="Email" required />
             <input
               type="text"
               name="subject"
               id="subject"
               placeholder="Subject"
+              required
             />
             <textarea
               name="message"
               id="message"
               placeholder="Message"
+              required
             ></textarea>
             <div class="send-div">
               <button type="submit">Send</button>
