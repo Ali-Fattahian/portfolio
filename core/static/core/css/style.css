@@ -345,6 +345,7 @@ img {
 .about-me__image {
   max-width: 456px;
   border-radius: 3px;
+  object-fit: contain;
 }
 
 #section--4 {
