@@ -15,19 +15,12 @@
       src="https://kit.fontawesome.com/bc2a3a5e96.js"
       crossorigin="anonymous"
     ></script>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"> -->
     <title>Portfolio - Ali Fattahian</title>
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
   </head>
   <body>
     <div class="container">
-      <!-- <div class="images">
-        <img src="images/background-upper.JPG" alt="sky">
-        <img src="images/background-lower.JPG" alt="mountains">
-      </div> -->
       <section class="section" id="section--1">
-        <!-- <img src="images/background-lower.JPG" alt="mountains" class="foreground">
-        <img src="images/background-upper.JPG" alt="sky" class="background"> -->
         <div class="nav-container">
           <nav id="nav">
             <a
@@ -41,9 +34,10 @@
               >CONTACT</a
             >
             <a
-              href="#"
+              href="{% static 'core/images/resume.pdf' %}"
               class="nav__item nav__download"
-              download="ali-fattahian-resume"
+              download="Ali-Fattahian-Resume"
+              id="nav-resume"
               title="Download my resume"
               >RESUME</a
             >
@@ -135,7 +129,7 @@
           </form>
           <div class="contact-me__socials">
             <div class="socials">
-              <a href="www.linkedin.com/in/ali-fattahian" target="_blank" class="social-icon" id="linkedin"
+              <a href="https://www.linkedin.com/in/ali-fattahian" target="_blank" class="social-icon" id="linkedin"
                 ><li class="fa fa-linkedin-square"></li></a
               ><a href="https://github.com/ali-fattahian" target="_blank" class="social-icon" id="github"
                 ><li class="fa fa-github-square"></li></a

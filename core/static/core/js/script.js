@@ -62,7 +62,8 @@ nav.addEventListener("mouseout", function (e) {
 });
 
 document.querySelector('#nav').addEventListener('click', function(e) {
-  e.preventDefault();
+  if (!e.target.classList.contains('nav__download')) {
+    e.preventDefault();
 
   if (e.target.classList.contains('nav__item')) {
       const id = e.target.getAttribute('href');
@@ -74,6 +75,8 @@ document.querySelector('#nav').addEventListener('click', function(e) {
           behavior: 'smooth',
       });
   };
+  }
+  
 });
 
 
